@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Add Product</title>
+  </head>
+  <body>
+    <h1>Add Product</h1>
+    <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if success is True %}
+        <div class="alert alert-success alert-dismissible fade show col-sm-12 col-lg-3 col-6" role="alert">
+            Product added successfully !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% elif success is False %}
+        <div class="alert alert-success alert-dismissible fade show col-sm-12 col-lg-3 col-6" role="alert">
+            A problem occured during product upload !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+
+        {% if f.errors %}
+        <div class="alert alert-danger alert-dismissible fade show col-sm-12 col-lg-3 col-6 " role="alert">
+            Invalid Input !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+        <div class="form-group col-sm-12 col-lg-3 col-6">
+            <label for="name">Product Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="form-group col-sm-12 col-lg-3 col-6">
+            <label for="price">Price per Unit:</label>
+            <input type="text" class="form-control" id="price" name="price">
+        </div>
+        <div class="form-group col-sm-12 col-lg-3 col-6">
+            <label for="qnt">Available Quantity:</label>
+            <input type="text" class="form-control" id="qnt" name="qnt">
+        </div>
+        <div class="form-group col-sm-12 col-lg-3 col-6">
+            <label for="upldate">Upload Date:</label>
+            <input type="date" class="form-control" id="upldate" name="upldate">
+        </div>
+        <div class="form-group col-sm-12 col-lg-3 col-6">
+            <label for="image">Product Preview:</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <input type="submit" class="btn btn-outline-primary col-sm-12 col-lg-3 col-6" value="Upload">
+    </form>
+    <a href="{% url 'show' %}">Show products list</a>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

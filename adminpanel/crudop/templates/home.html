@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Online kitchenware Market</title>
+        <link rel="stylesheet" href="./lib/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <style>
+          .carousel-inner img {
+            width: 100%;
+
+          }
+        </style>
+        <style type="text/css">
+          .jumbotron{
+                    background-image:url('images/7.jpeg');
+                    background-attachment: fixed;
+                    background-repeat: no-repeat;
+                    background-size: cover;}
+                  </style>
+    <script src="https://kit.fontawesome.com/014033a7e3.js" crossorigin="anonymous"></script>
+
+
+    <script>
+    function mailvalidate(){
+                       var emailexp=/^([a-zA-Z0-9_.-]+)@([a-z0-9_.-]+)\.([a-z.]{2,6})$/;
+
+                      var useremail=document.getElementById("email").value;
+
+                      if(emailexp.test(useremail)){
+                          document.getElementById("inv-mail").style.display="none";
+                      }
+                      else{
+                          document.getElementById("inv-mail").style.display="inline";
+                      }
+                  }
+              function phonevalidate(){
+                                var emailexp=/^([01])?\d{11}$/;
+
+                                var userphone=document.getElementById("phone").value;
+
+                                if(emailexp.test(userphone)){
+                                    document.getElementById("inv-phone").style.display="none";
+                                }
+                                else{
+                                    document.getElementById("inv-phone").style.display="inline";
+                                }
+                            }
+
+  var pass=document.getElementById('cpwd');
+  pass.addEventListener('keyup',passcheck);
+
+
+
+    </script>
+
+    </head>
+    <body>
+        <div class="container-fluid">
+          <!-- Start nav -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow p-1 mb-5 rounded">
+
+               <span class="navbar-brand mb-0 h1">Kitchenware Market</span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarId" aria-controls="navbarTogglerDemo3" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse " id="navbarId">
+                    <ul class="navbar-nav mr-auto navbar-dark">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="order.html">Order</a>
+                        </li>
+
+
+
+                    </ul>
+                    <form class="form-inline my-2">
+
+                        <input class="form-control mr-sm-2 d-none d-lg-block" type="search" placeholder="Search" aria-label="Search" >
+
+                        <button class="btn btn-outline-info my-2 my-sm-0 d-none d-lg-block" type="submit">Search</button>
+
+                        <a href='{% url "login" %}' class="btn bg-info my-2 my-lg-0">login</a>
+
+                        <a href='{% url "register" %}' class="btn bg-info my-2 my-lg-0">Registration</a>
+
+                     </form>
+
+                  </div>
+             </nav>
+             <!-- End nav -->
+
+
+
+
+
+
+   {% include './cart.html '%}
+
+
+
+
+
+
+
+        <!-- adding jquery then popper then bootstrap JS libraries -->
+        <script type="text/javascript" src="lib/js/jquery-3.5.1.slim.min.js"></script>
+        <script type="text/javascript" src="lib/js/popper.min.js"></script>
+        <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+
+        var noti=document.querySelector('i');
+        var select=document.querySelector('.select');
+        var button=document.getElementsByTagName('button');
+        for (select of button) {
+          select.addEventLitsener('click',(e)=>{
+            var add = Number(noti.getAttribute('data-count')||0);
+            noti.setAttribute('data-count',add + 1);
+            noti.classList.add('zero');
+          })
+        }
+
+
+        </script>
+    </body>
+</html>

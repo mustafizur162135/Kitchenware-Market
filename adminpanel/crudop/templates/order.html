@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+  <div class=" container-fluid">
+        <div class="text-center text-info"style="margin-top: 20px">
+        <h1> Order</h1>
+      </div>
+
+
+   <!--form-->
+<div class="modal-body">
+       <div class="container">
+         <h3>Billing address</h3>
+         <hr>
+        <div class="row ml-1">
+
+<div class="form-group col-lg-3 col-md-12 col-sm-12">
+          <label for="fname">First Name:</label>
+          <input type="text" class="form-control" aria-label="default" placeholder="First Name" id="fname">
+        </div>
+        <div class="form-group col-lg-3 col-md-12 col-sm-12">
+          <label for="lname">Last Name:</label>
+          <input type="text" class="form-control " aria-label="default" placeholder="Last Name" id="lname">
+        </div>
+       </div>
+       <div class="row ml-1">
+                <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                 <label for="uname">User Name:</label>
+                 <input type="text" class="form-control" aria-label="default" placeholder="@user name" id="uname"name="uname" onkeyup="unamevalidate();"> <span id="inv-mail" style="display:none;color:red;">Invalid Email</span><br/>
+       </div>
+       </div>
+<div class="row ml-1">
+         <div class="form-group col-lg-6 col-md-12 col-sm-12">
+          <label for="email1">Email:</label>
+          <input type="email1" class="form-control" aria-label="default" placeholder="example@gmail.com" id="email1"name="email1" onkeyup="mailvalidate1();"> <span id="inv-mail1" style="display:none;color:red;">Invalid Email</span><br/>
+</div>
+</div>
+<div class="row ml-1">
+  <div class="form-group col-lg-6 col-md-12 col-sm-12">
+          <label for="phone1">Phone: +88-11 digits</label>
+          <input type="text" class="form-control " aria-label="default" placeholder="Phone Number" id="phone1" name="phone1" onkeyup="phonevalidate1();"> <span id="inv-phone2" style="display:none;color:red;">Invalid phone number</span><br/>
+        </div>
+  </div>
+  <div class="row ml-1">
+           <div class="form-group col-lg-6 col-md-12 col-sm-12">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" aria-label="default" placeholder="bulding or appertment address" id="address"name="address" onkeyup="addvalidate();"> <span id="inv-mail" style="display:none;color:red;">Invalid Email</span><br/>
+  </div>
+  </div>
+</div>
+<!--payment-->
+<div class="container">
+	<div class="row">
+		<div class="paymentCont">
+						<div class="headingWrap">
+								<h3 class="headingTop text-center">Select Your Payment Method</h3>
+								<p class="text-center">Created with bootsrap button and using radio button</p>
+                <hr>
+						</div>
+						<div class="paymentWrap">
+							<div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+					            <label class="btn paymentMethod active">
+					            	<div class="method visa"></div>
+                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/pay.jpg" style="width: 150px; height: 100px;"> </a>
+					                <input type="radio" name="options" checked>
+					            </label>
+					            <label class="btn paymentMethod">
+					            	<div class="method master-card"></div>
+                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/pay1.jpg" style="width: 150px; height: 100px;"> </a>
+					                <input type="radio" name="options">
+					            </label>
+					            <label class="btn paymentMethod">
+				            		<div class="method amex"></div>
+                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="images/pay2.jpg" style="width: 150px; height: 100px;"> </a>
+					                <input type="radio" name="options">
+					            </label>
+
+
+					        </div>
+						</div>
+						<div class="footerNavWrap clearfix">
+
+              <button type="button" class="btn btn-success pl-15 pr-15 ml-5"style="text-align:center;">
+                  Checkout <span class="glyphicon glyphicon-play"></span>
+						</div>
+					</div>
+
+	</div>
+</div>
+
+    <!--jquery and javaScript-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
